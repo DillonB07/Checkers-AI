@@ -1,4 +1,5 @@
 # Checkers-AI
+[![Repl Talk Badge](https://replit-badge.vercel.app/api?id=143647&style=gradient)](https://replit.com/talk/share/AI-Checkers/143647)
 
 Play a game of Checkers (Draughts) against an AI!
 
