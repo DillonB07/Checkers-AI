@@ -2,11 +2,20 @@ import pygame
 from checkers.constants import WIDTH, HEIGHT, SQUARE_SIZE, RED, WHITE
 from checkers.game import Game
 from minimax.algorithm import minimax
+import os
 pygame.init()
 FPS = 60
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Checkers')
+
+def clear():
+  # Check if Operating System is Mac and Linux or Windows
+  if os.name == 'posix':
+    _ = os.system('clear')
+  else:
+    # Else Operating System is Windows (os.name = nt)
+    _ = os.system('cls')
 
 def get_row_col_from_mouse(pos):
     x, y = pos
@@ -73,7 +82,7 @@ def main(difficulty):
     
     pygame.quit()
 
-
+clear()
 difficulty = get_difficulty()
-
+clear()
 main(difficulty)

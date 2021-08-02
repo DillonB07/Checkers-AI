@@ -44,7 +44,7 @@ def get_all_moves(board, color, game):
     for piece in board.get_all_pieces(color):
         valid_moves = board.get_valid_moves(piece)
         for move, skip in valid_moves.items():
-            draw_moves(game, board, piece) #Comment this line of code out to not see the "thinking"
+            # draw_moves(game, board, piece) # Uncomment this line of code out to not see the "thinking"
             temp_board = deepcopy(board)
             temp_piece = temp_board.get_piece(piece.row, piece.col)
             new_board = simulate_move(temp_piece, move, temp_board, game, skip)
