@@ -22,15 +22,7 @@ def clear():
 
     # Check if Operating System is Mac and Linux or Windows
 
-    if os.name == 'posix':
-
-        _ = os.system('clear')
-
-    else:
-
-        # Else Operating System is Windows (os.name = nt)
-
-        _ = os.system('cls')
+    _ = os.system('clear') if os.name == 'posix' else os.system('cls')
 
 
 def get_row_col_from_mouse(pos):
@@ -67,8 +59,9 @@ def get_difficulty():
             if confirm == 'y':
 
                 confirm = input(
+                    'WARNING:\nAre you sure you want to proced?\nDoing this may take a long time for the AI to decide, and put stress on your CPU. (y/N): '
+                )
 
-                    f'WARNING:\nAre you sure you want to proced?\nDoing this may take a long time for the AI to decide, and put stress on your CPU. (y/N): ')
 
                 if confirm == 'y':
 
@@ -80,16 +73,13 @@ def get_difficulty():
 
                         return difficulty
 
-                    elif confirm != 'y':
-
+                    else:
                         get_difficulty()
 
-                elif confirm != 'y':
-
+                else:
                     get_difficulty()
 
-            elif confirm != 'y':
-
+            else:
                 get_difficulty()
 
         return difficulty
